@@ -1,18 +1,19 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Time
 %define	pnam	HiRes
 Summary:	Time::HiRes - High resolution alarm, sleep, gettimeofday, interval timers
 Summary(pl):	Time::HiRes - wysokiej rozdzielczo¶ci funkcje alarm, sleep, gettimeofday i liczniki
 Name:		perl-Time-HiRes
-Version:	1.35
-Release:	2
+Version:	1.36
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-Patch0:		perl-Time-HiRes-makefile.patch
+#Patch0:		perl-Time-HiRes-makefile.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,7 +27,7 @@ i gettimeofday.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch -p0
+#%patch -p0
 
 %build
 perl Makefile.PL
@@ -45,9 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README TODO
-%{perl_sitearch}/Time
-%dir %{perl_sitearch}/auto/Time
-%dir %{perl_sitearch}/auto/Time/HiRes
-%{perl_sitearch}/auto/Time/HiRes/HiRes.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Time/HiRes/HiRes.so
+%{perl_archlib}/Time
+%dir %{perl_archlib}/auto/Time
+%dir %{perl_archlib}/auto/Time/HiRes
+%{perl_archlib}/auto/Time/HiRes/HiRes.bs
+%attr(755,root,root) %{perl_archlib}/auto/Time/HiRes/HiRes.so
 %{_mandir}/man3/*
