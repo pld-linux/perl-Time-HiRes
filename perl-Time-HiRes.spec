@@ -11,7 +11,7 @@ Name:		perl-Time-HiRes
 Version:	1.59
 Release:	1
 # same as perl
-License:	GPL or Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	60ebc9d277108577d7e2a3a15ce65fd6
