@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Time
 %define	pnam	HiRes
-Summary:	Time-HiRes perl module
-Summary(pl):	Modu³ perla Time-HiRes
+Summary:	Time::HiRes perl module
+Summary(pl):	Modu³ perla Time::HiRes
 Name:		perl-Time-HiRes
 Version:	01.20
 Release:	8
@@ -14,10 +14,10 @@ BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Time-HiRes - High resolution ualarm, usleep, and gettimeofday.
+Time::HiRes - High resolution ualarm, usleep, and gettimeofday.
 
 %description -l pl
-Time-HiRes to interfejs perla dla funkcji systemowych: ualarm, usleep
+Time::HiRes to interfejs perla dla funkcji systemowych: ualarm, usleep
 i gettimeofday.
 
 %prep
