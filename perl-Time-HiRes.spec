@@ -3,13 +3,14 @@ Summary:	Time-HiRes perl module
 Summary(pl):	Modu³ perla Time-HiRes
 Name:		perl-Time-HiRes
 Version:	01.20
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Time/Time-HiRes-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,7 +27,7 @@ i gettimeofday.
 
 %build
 perl Makefile.PL
-%{__make} OPTIMIZE="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} OPTIMIZE="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,11 +42,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-
 %{perl_sitearch}/Time/HiRes.pm
-
 %dir %{perl_sitearch}/auto/Time/HiRes
 %{perl_sitearch}/auto/Time/HiRes/HiRes.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Time/HiRes/HiRes.so
-
 %{_mandir}/man3/*
