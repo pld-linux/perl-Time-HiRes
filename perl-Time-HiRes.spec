@@ -13,7 +13,6 @@ Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-#Patch0:		perl-Time-HiRes-makefile.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,7 +26,6 @@ i gettimeofday.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-#%patch -p0
 
 %build
 perl Makefile.PL
