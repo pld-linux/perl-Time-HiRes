@@ -3,7 +3,7 @@ Summary:	Time-HiRes perl module
 Summary(pl):	Modu³ perla Time-HiRes
 Name:		perl-Time-HiRes
 Version:	01.20
-Release:	5
+Release:	6
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
