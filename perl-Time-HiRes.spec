@@ -1,29 +1,17 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Time
-%define		pnam	HiRes
-Summary:	Time::HiRes Perl module
-Summary(cs):	Modul Time::HiRes pro Perl
-Summary(da):	Perlmodul Time::HiRes
-Summary(de):	Time::HiRes Perl Modul
-Summary(es):	Módulo de Perl Time::HiRes
-Summary(fr):	Module Perl Time::HiRes
-Summary(it):	Modulo di Perl Time::HiRes
-Summary(ja):	Time::HiRes Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Time::HiRes ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Time::HiRes
-Summary(pl):	Modu³ Perla Time::HiRes
-Summary(pt):	Módulo de Perl Time::HiRes
-Summary(pt_BR):	Módulo Perl Time::HiRes
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Time::HiRes
-Summary(sv):	Time::HiRes Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Time::HiRes
-Summary(zh_CN):	Time::HiRes Perl Ä£¿é
+%define	pdir	Time
+%define	pnam	HiRes
+Summary:	Time::HiRes - High resolution alarm, sleep, gettimeofday, interval timers
 Name:		perl-Time-HiRes
-Version:	01.20
-Release:	10
-License:	GPL
+Version:	1.35
+Release:	1
+License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Patch0:		perl-Time-HiRes-makefile.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,10 +25,13 @@ i gettimeofday.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch -p0
 
 %build
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
