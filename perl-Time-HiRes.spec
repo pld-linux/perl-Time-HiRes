@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	Time
 %define	pnam	HiRes
-%include	/usr/lib/rpm/macros.perl
 Summary:	Time-HiRes perl module
 Summary(pl):	Modu³ perla Time-HiRes
 Name:		perl-Time-HiRes
 Version:	01.20
-Release:	7
-
+Release:	8
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -22,7 +21,7 @@ Time-HiRes to interfejs perla dla funkcji systemowych: ualarm, usleep
 i gettimeofday.
 
 %prep
-%setup -q -n Time-HiRes-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
