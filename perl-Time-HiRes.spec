@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Time
-%define	pnam	HiRes
+%define		pdir	Time
+%define		pnam	HiRes
 Summary:	Time::HiRes Perl module
 Summary(cs):	Modul Time::HiRes pro Perl
 Summary(da):	Perlmodul Time::HiRes
@@ -20,7 +20,7 @@ Summary(uk):	Модуль для Perl Time::HiRes
 Summary(zh_CN):	Time::HiRes Perl дё©И
 Name:		perl-Time-HiRes
 Version:	01.20
-Release:	9
+Release:	10
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -53,7 +53,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README TODO
-%{perl_sitearch}/Time/HiRes.pm
+%{perl_sitearch}/Time
+%dir %{perl_sitearch}/auto/Time
 %dir %{perl_sitearch}/auto/Time/HiRes
 %{perl_sitearch}/auto/Time/HiRes/HiRes.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Time/HiRes/HiRes.so
