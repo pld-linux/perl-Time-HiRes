@@ -17,6 +17,9 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 # Source0-md5:	60ebc9d277108577d7e2a3a15ce65fd6
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+# remove the line below if you *really* have newer version than one
+# available in perl-modules
+BuildRequires:	this-must-be-newer-version-than-in-perl-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
