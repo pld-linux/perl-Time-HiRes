@@ -12,7 +12,8 @@ Version:	1.45
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://backpan.cpan.org/authors/id/J/JH/JHI/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	dc942ebd34e25ab744c73a94216f24e3
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
