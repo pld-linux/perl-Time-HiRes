@@ -26,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Time::HiRes - High resolution ualarm, usleep, and gettimeofday.
 
 %description -l pl
-Time::HiRes to interfejs perla dla funkcji systemowych: ualarm, usleep
+Time::HiRes to interfejs Perla dla funkcji systemowych: ualarm, usleep
 i gettimeofday.
 
 %prep
