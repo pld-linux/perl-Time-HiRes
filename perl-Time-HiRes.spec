@@ -5,10 +5,10 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Time
 %define	pnam	HiRes
-Summary:	Time::HiRes - High resolution alarm, sleep, gettimeofday, interval timers
+Summary:	Time::HiRes - high resolution alarm, sleep, gettimeofday, interval timers
 Summary(pl):	Time::HiRes - wysokiej rozdzielczo¶ci funkcje alarm, sleep, gettimeofday i liczniki
 Name:		perl-Time-HiRes
-Version:	1.37
+Version:	1.38
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
