@@ -1,11 +1,26 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Time
 %define	pnam	HiRes
-Summary:	Time::HiRes perl module
-Summary(pl):	Modu³ perla Time::HiRes
+Summary:	Time::HiRes Perl module
+Summary(cs):	Modul Time::HiRes pro Perl
+Summary(da):	Perlmodul Time::HiRes
+Summary(de):	Time::HiRes Perl Modul
+Summary(es):	Módulo de Perl Time::HiRes
+Summary(fr):	Module Perl Time::HiRes
+Summary(it):	Modulo di Perl Time::HiRes
+Summary(ja):	Time::HiRes Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	Time::HiRes ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul Time::HiRes
+Summary(pl):	Modu³ Perla Time::HiRes
+Summary(pt):	Módulo de Perl Time::HiRes
+Summary(pt_BR):	Módulo Perl Time::HiRes
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Time::HiRes
+Summary(sv):	Time::HiRes Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Time::HiRes
+Summary(zh_CN):	Time::HiRes Perl Ä£¿é
 Name:		perl-Time-HiRes
 Version:	01.20
-Release:	8
+Release:	9
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -32,14 +47,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf Changes README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README TODO
 %{perl_sitearch}/Time/HiRes.pm
 %dir %{perl_sitearch}/auto/Time/HiRes
 %{perl_sitearch}/auto/Time/HiRes/HiRes.bs
