@@ -1,43 +1,50 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Time
-%define	pnam	HiRes
+%define		pdir	Time
+%define		pnam	HiRes
 Summary:	Time::HiRes - high resolution alarm, sleep, gettimeofday, interval timers
 Summary(pl):	Time::HiRes - wysokiej rozdzielczo¶ci funkcje alarm, sleep, gettimeofday i liczniki
 Name:		perl-Time-HiRes
-Version:	1.45
-Release:	1
-License:	GPL/Artistic
+Version:	1.72
+Release:	2
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://backpan.cpan.org/authors/id/J/JH/JHI/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	dc942ebd34e25ab744c73a94216f24e3
-BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 4.0.2-104
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	6fb0576c7a7092fdf5d464943fd3b6e6
+BuildRequires:	perl-devel >= 1:5.6.1
+BuildRequires:	rpm-perlprov >= 4.0.2-112.1
+# remove the line below if you *really* have newer version than one
+# available in perl-modules
+#BuildRequires:	this-must-be-newer-version-than-in-perl-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Time::HiRes - High resolution ualarm, usleep, and gettimeofday.
 
 %description -l pl
-Time::HiRes to interfejs perla dla funkcji systemowych: ualarm, usleep
+Time::HiRes to interfejs Perla dla funkcji systemowych: ualarm, usleep
 i gettimeofday.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__perl} Makefile.PL \
+	INSTALLDIRS=site
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,9 +52,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README TODO
-%{perl_archlib}/Time
-%dir %{perl_archlib}/auto/Time
-%dir %{perl_archlib}/auto/Time/HiRes
-%{perl_archlib}/auto/Time/HiRes/HiRes.bs
-%attr(755,root,root) %{perl_archlib}/auto/Time/HiRes/HiRes.so
+%{perl_sitearch}/%{pdir}
+%dir %{perl_sitearch}/auto/%{pdir}
+%dir %{perl_sitearch}/auto/%{pdir}/%{pnam}
+%{perl_sitearch}/auto/%{pdir}/%{pnam}/%{pnam}.bs
+%attr(755,root,root) %{perl_sitearch}/auto/%{pdir}/%{pnam}/%{pnam}.so
 %{_mandir}/man3/*
