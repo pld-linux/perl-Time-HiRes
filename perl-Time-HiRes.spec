@@ -13,7 +13,7 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Time/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	29a89f3e46cbb3fc2c24507f91a0a843
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -52,9 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README TODO
-%{perl_vendorarch}/%{pdir}
-%dir %{perl_vendorarch}/auto/%{pdir}
-%dir %{perl_vendorarch}/auto/%{pdir}/%{pnam}
-%{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.so
+%{perl_vendorarch}/Time/HiRes.pm
+%dir %{perl_vendorarch}/auto/Time/HiRes
+%{perl_vendorarch}/auto/Time/HiRes/HiRes.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Time/HiRes/HiRes.so
 %{_mandir}/man3/*
