@@ -6,7 +6,7 @@
 %define		pdir	Time
 %define		pnam	HiRes
 Summary:	Time::HiRes - high resolution alarm, sleep, gettimeofday, interval timers
-Summary(pl.UTF-8):   Time::HiRes - wysokiej rozdzielczości funkcje alarm, sleep, gettimeofday i liczniki
+Summary(pl.UTF-8):	Time::HiRes - wysokiej rozdzielczości funkcje alarm, sleep, gettimeofday i liczniki
 Name:		perl-Time-HiRes
 Version:	1.9705
 Release:	1
