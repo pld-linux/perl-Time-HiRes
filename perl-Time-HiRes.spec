@@ -8,13 +8,13 @@
 Summary:	Time::HiRes - high resolution alarm, sleep, gettimeofday, interval timers
 Summary(pl.UTF-8):	Time::HiRes - wysokiej rozdzielczości funkcje alarm, sleep, gettimeofday i liczniki
 Name:		perl-Time-HiRes
-Version:	1.9721
+Version:	1.9725
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Time/JHI/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	bf09911a36b9481537c8e0d28fbb3aaf
+Source0:	http://www.cpan.org/modules/by-module/Time/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	cb1108c076d26f3d2fed0bb91313135a
 URL:		http://search.cpan.org/dist/Time-HiRes/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
