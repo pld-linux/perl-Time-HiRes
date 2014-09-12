@@ -56,6 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README TODO
 %{perl_vendorarch}/Time/HiRes.pm
 %dir %{perl_vendorarch}/auto/Time/HiRes
-%{perl_vendorarch}/auto/Time/HiRes/HiRes.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Time/HiRes/HiRes.so
 %{_mandir}/man3/Time::HiRes.3pm*
