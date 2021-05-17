@@ -14,9 +14,10 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Time/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	6b1c30c00acb8e891e4b31d38341bc90
-URL:		http://search.cpan.org/dist/Time-HiRes/
+URL:		https://metacpan.org/release/Time-HiRes
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 # remove the line below if you *really* have newer version than one
 # available in perl-modules
 #BuildRequires:	this-must-be-newer-version-than-in-perl-modules
